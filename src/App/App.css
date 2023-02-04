@@ -619,3 +619,59 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 .img-custom{
 	transform: scale(1.4);
 }
+.img-project{
+	width: 24px;
+}
+.p-project{
+	display: inline;
+}
+
+.button-custom{
+	display: block;
+	width: max-content;
+	margin: auto;
+	background-color: transparent;
+	color: #fff;
+	border: 1px solid #fff;
+	margin-top: 16px;
+	padding: 8px 16px;
+	font-weight: bold;
+	transition: 0.3 ease-in-out;
+	position: relative;
+}
+
+.button-custom:hover{
+	color: black;
+}
+
+.button-custom::before{
+	content: '';
+	width: 0%;
+	height: 100%;
+	background-color: #fff;
+	position: absolute;
+	left: 0;
+	top: 0;
+	z-index: -1;
+	transition: 0.3 ease;
+}
+.button-custom:hover::before{
+	content: '';
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	animation: button 0.3s 1 linear;
+}
+
+@keyframes button{
+	0%{
+		width: 0%;
+	}
+	50%{
+		width: 50%;
+	}
+	100%{
+		width: 100%;
+	}
+}
+

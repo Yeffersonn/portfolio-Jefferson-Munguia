@@ -5,6 +5,8 @@ import projImg2 from "../assets/img/project-img2.png";
 import projImg3 from "../assets/img/project-img3.png";
 import projImg4 from "../assets/img/project-img4.png";
 import projImg5 from "../assets/img/project-img5.png";
+import projImg6 from "../assets/img/project-img6.png";
+import navIcon4 from "../assets/img/nav-icon4.svg";
 import colorSharp2 from "../assets/img/color-sharp2.png";
 import "animate.css";
 import TrackVisibility from "react-on-screen";
@@ -12,34 +14,46 @@ import TrackVisibility from "react-on-screen";
 export const Projects = () => {
 	const projects: cardProyect[] = [
 		{
-			title: "Business Startup",
-			description: "Design & Development",
+			title: "Dashboard",
+			description:
+				"Responsive design and Dark mode developed with JavaScript, React, Material UI",
 			imgUrl: projImg1,
+			webUrl: "https://dashboard-yeffersong.vercel.app/",
 		},
 		{
-			title: "Business Startup",
-			description: "Design & Development",
+			title: "Digital Ocean",
+			description:
+				"Responsive design developed with TypeScript, React, Tailwind",
 			imgUrl: projImg2,
+			webUrl: "https://digital-ocean.vercel.app/",
 		},
 		{
-			title: "Business Startup",
-			description: "Design & Development",
+			title: "Travel Company",
+			description:
+				"Responsive design and Dark mode developed with TypeScript, React, Tailwind",
 			imgUrl: projImg3,
+			webUrl: "https://travel-company-alpha.vercel.app/",
 		},
 		{
-			title: "Business Startup",
-			description: "Design & Development",
+			title: "GitHub API",
+			description:
+				"API consumption developed with JavaScript, React, Material UI",
 			imgUrl: projImg4,
+			webUrl: "https://github-api-one-xi.vercel.app/",
 		},
 		{
-			title: "Business Startup",
-			description: "Design & Development",
+			title: "Pokedux",
+			description:
+				"API consumption developed with JavaScript, React, Redux, Ant Design",
 			imgUrl: projImg5,
+			webUrl: "https://pokedux-mauve.vercel.app/",
 		},
 		{
-			title: "Business Startup",
-			description: "Design & Development",
-			imgUrl: projImg3,
+			title: "To-Do Machine",
+			description:
+				"Application developed with JavaScript, React, React Router",
+			imgUrl: projImg6,
+			webUrl: "https://recordatorios.vercel.app/",
 		},
 	];
 
@@ -112,28 +126,18 @@ export const Projects = () => {
 											</Tab.Pane>
 											<Tab.Pane eventKey="second">
 												<p>
-													Lorem ipsum dolor sit amet
-													consectetur adipisicing
-													elit. Cumque quam, quod
-													neque provident velit, rem
-													explicabo excepturi id illo
-													molestiae blanditiis,
-													eligendi dicta officiis
-													asperiores delectus quasi
-													inventore debitis quo.
+													Soon I will post more of my
+													projects, but you can find
+													more of my projects in my
+													github profile
 												</p>
 											</Tab.Pane>
 											<Tab.Pane eventKey="third">
 												<p>
-													Lorem ipsum dolor sit amet
-													consectetur adipisicing
-													elit. Cumque quam, quod
-													neque provident velit, rem
-													explicabo excepturi id illo
-													molestiae blanditiis,
-													eligendi dicta officiis
-													asperiores delectus quasi
-													inventore debitis quo.
+													Soon I will post more of my
+													projects, but you can find
+													more of my projects in my
+													github profile
 												</p>
 											</Tab.Pane>
 										</Tab.Content>
