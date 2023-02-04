@@ -20,9 +20,11 @@ export const Contact = () => {
 		phone: "",
 		message: "",
 	};
+
+	const initialStatus: any = {};
 	const [formDetails, setFormDetails] = useState(formInitialDetails);
 	const [buttonText, setButtonText] = useState("Send");
-	const [status, setStatus] = useState({});
+	const [status, setStatus] = useState(initialStatus);
 
 	const onFormUpdate = (category: any, value: any) => {
 		setFormDetails({
@@ -160,7 +162,7 @@ export const Contact = () => {
 											</Col>
 											<Col size={12} className="px-1">
 												<textarea
-													rows="6"
+													rows={6}
 													value={formDetails.message}
 													placeholder="Message"
 													onChange={(e) =>
