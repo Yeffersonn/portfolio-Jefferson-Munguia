@@ -203,6 +203,7 @@ export const Contact = () => {
 											name="_captcha"
 											value="false"
 										/>
+										<input type="hidden" name="_cc" value="U20215320@utp.edu.pe"></input>
 										<input
 											type="hidden"
 											name="_subject"
