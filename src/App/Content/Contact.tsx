@@ -88,7 +88,7 @@ export const Contact = () => {
 									<h2>Get In Touch</h2>
 									<form
 										// onSubmit={handleSubmit}
-										action="https://formsubmit.co/U20215320@utp.edu.pe"
+										action="https://formsubmit.co/jefferson.munguia.egusquiza@gmail.com"
 										method="POST"
 									>
 										<Row>
