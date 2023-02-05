@@ -35,25 +35,25 @@ export const Contact = () => {
 
 	const handleSubmit = async (e: any) => {
 		e.preventDefault();
-		setButtonText("Sending...");
-		let response = await fetch("http://localhost:5000/contact", {
-			method: "POST",
-			headers: {
-				"Content-Type": "application/json;charset=utf-8",
-			},
-			body: JSON.stringify(formDetails),
-		});
-		setButtonText("Send");
-		let result = await response.json();
-		setFormDetails(formInitialDetails);
-		if (result.code == 200) {
-			setStatus({ succes: true, message: "Message sent successfully" });
-		} else {
-			setStatus({
-				succes: false,
-				message: "Something went wrong, please try again later.",
-			});
-		}
+		// setButtonText("Sending...");
+		// let response = await fetch("http://localhost:5000/contact", {
+		// 	method: "POST",
+		// 	headers: {
+		// 		"Content-Type": "application/json;charset=utf-8",
+		// 	},
+		// 	body: JSON.stringify(formDetails),
+		// });
+		// setButtonText("Send");
+		// let result = await response.json();
+		// setFormDetails(formInitialDetails);
+		// if (result.code == 200) {
+		// 	setStatus({ succes: true, message: "Message sent successfully" });
+		// } else {
+		// 	setStatus({
+		// 		succes: false,
+		// 		message: "Something went wrong, please try again later.",
+		// 	});
+		// }
 	};
 
 	return (
@@ -86,7 +86,11 @@ export const Contact = () => {
 									}
 								>
 									<h2>Get In Touch</h2>
-									<form onSubmit={handleSubmit}>
+									<form
+										// onSubmit={handleSubmit}
+										action="https://formsubmit.co/U20215320@utp.edu.pe"
+										method="POST"
+									>
 										<Row>
 											<Col
 												size={12}
@@ -95,6 +99,7 @@ export const Contact = () => {
 											>
 												<input
 													type="text"
+													name="Nombre"
 													value={
 														formDetails.firstName
 													}
@@ -114,9 +119,8 @@ export const Contact = () => {
 											>
 												<input
 													type="text"
-													value={
-														formDetails.lastName
-													}
+													name="Apellido"
+													value={formDetails.lastName}
 													placeholder="Last Name"
 													onChange={(e) =>
 														onFormUpdate(
@@ -133,6 +137,7 @@ export const Contact = () => {
 											>
 												<input
 													type="email"
+													name="Email"
 													value={formDetails.email}
 													placeholder="Email Address"
 													onChange={(e) =>
@@ -150,6 +155,7 @@ export const Contact = () => {
 											>
 												<input
 													type="tel"
+													name="Teléfono"
 													value={formDetails.phone}
 													placeholder="Phone No."
 													onChange={(e) =>
@@ -164,6 +170,7 @@ export const Contact = () => {
 												<textarea
 													rows={6}
 													value={formDetails.message}
+													name="Mensaje"
 													placeholder="Message"
 													onChange={(e) =>
 														onFormUpdate(
@@ -191,6 +198,26 @@ export const Contact = () => {
 												</Col>
 											)}
 										</Row>
+										<input
+											type="hidden"
+											name="_captcha"
+											value="false"
+										/>
+										<input
+											type="hidden"
+											name="_subject"
+											value="¡Nueva Petición Portafolio Web!"
+										/>
+										<input
+											type="hidden"
+											name="_template"
+											value="table"
+										/>
+										<input
+											type="hidden"
+											name="_next"
+											value="https://portfolio-jefferson-munguia.vercel.app/"
+										/>
 									</form>
 								</div>
 							)}
