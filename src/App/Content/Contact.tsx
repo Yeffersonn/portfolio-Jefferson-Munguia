@@ -21,7 +21,7 @@ export const Contact = () => {
 		message: "",
 	};
 
-	const initialStatus: any = {};
+	const initialStatus: any = true;
 	const [formDetails, setFormDetails] = useState(formInitialDetails);
 	const [buttonText, setButtonText] = useState("Send");
 	const [status, setStatus] = useState(initialStatus);
@@ -31,6 +31,12 @@ export const Contact = () => {
 			...formDetails,
 			[category]: value,
 		});
+
+		const currentForm : object = {
+			...formDetails,
+			[category]: value,
+		};
+		onValidateInput(currentForm);
 	};
 
 	const handleSubmit = async (e: any) => {
@@ -54,6 +60,22 @@ export const Contact = () => {
 		// 		message: "Something went wrong, please try again later.",
 		// 	});
 		// }
+	};
+
+	const onValidate = ({ target }: any) => {
+		if (target.value.length == 0) {
+			target.classList.add("border-error");
+		} else {
+			target.classList.remove("border-error");
+		}
+	};
+
+	const onValidateInput = (currentForm : object) => {
+		const currentBoolean = Object.entries(currentForm).every(
+			(n) => n[1].length > 0
+		);
+
+		setStatus(!currentBoolean);
 	};
 
 	return (
@@ -104,12 +126,16 @@ export const Contact = () => {
 														formDetails.firstName
 													}
 													placeholder="First Name"
-													onChange={(e) =>
+													onChange={(e) => {
 														onFormUpdate(
 															"firstName",
 															e.target.value
-														)
-													}
+														);
+														onValidate(e);
+													}}
+													onBlur={(e) => {
+														onValidate(e);
+													}}
 												/>
 											</Col>
 											<Col
@@ -122,12 +148,16 @@ export const Contact = () => {
 													name="Apellido"
 													value={formDetails.lastName}
 													placeholder="Last Name"
-													onChange={(e) =>
+													onChange={(e) => {
 														onFormUpdate(
 															"lastName",
 															e.target.value
-														)
-													}
+														);
+														onValidate(e);
+													}}
+													onBlur={(e) => {
+														onValidate(e);
+													}}
 												/>
 											</Col>
 											<Col
@@ -140,12 +170,16 @@ export const Contact = () => {
 													name="Email"
 													value={formDetails.email}
 													placeholder="Email Address"
-													onChange={(e) =>
+													onChange={(e) => {
 														onFormUpdate(
 															"email",
 															e.target.value
-														)
-													}
+														);
+														onValidate(e);
+													}}
+													onBlur={(e) => {
+														onValidate(e);
+													}}
 												/>
 											</Col>
 											<Col
@@ -158,12 +192,16 @@ export const Contact = () => {
 													name="Teléfono"
 													value={formDetails.phone}
 													placeholder="Phone No."
-													onChange={(e) =>
+													onChange={(e) => {
 														onFormUpdate(
 															"phone",
 															e.target.value
-														)
-													}
+														);
+														onValidate(e);
+													}}
+													onBlur={(e) => {
+														onValidate(e);
+													}}
 												/>
 											</Col>
 											<Col size={12} className="px-1">
@@ -172,14 +210,22 @@ export const Contact = () => {
 													value={formDetails.message}
 													name="Mensaje"
 													placeholder="Message"
-													onChange={(e) =>
+													onChange={(e) => {
 														onFormUpdate(
 															"message",
 															e.target.value
-														)
-													}
+														);
+														onValidate(e);
+													}}
+													onBlur={(e) => {
+														onValidate(e);
+													}}
 												></textarea>
-												<button type="submit">
+												<button
+													className="button-contact"
+													type="submit"
+													disabled={status}
+												>
 													<span>{buttonText}</span>
 												</button>
 											</Col>
@@ -203,7 +249,11 @@ export const Contact = () => {
 											name="_captcha"
 											value="false"
 										/>
-										<input type="hidden" name="_cc" value="U20215320@utp.edu.pe"></input>
+										<input
+											type="hidden"
+											name="_cc"
+											value="U20215320@utp.edu.pe"
+										></input>
 										<input
 											type="hidden"
 											name="_subject"
