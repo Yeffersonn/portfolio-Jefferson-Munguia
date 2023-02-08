@@ -32,7 +32,7 @@ export const Contact = () => {
 			[category]: value,
 		});
 
-		const currentForm : object = {
+		const currentForm: object = {
 			...formDetails,
 			[category]: value,
 		};
@@ -70,7 +70,7 @@ export const Contact = () => {
 		}
 	};
 
-	const onValidateInput = (currentForm : object) => {
+	const onValidateInput = (currentForm: object) => {
 		const currentBoolean = Object.entries(currentForm).every(
 			(n) => n[1].length > 0
 		);
@@ -221,6 +221,33 @@ export const Contact = () => {
 														onValidate(e);
 													}}
 												></textarea>
+												{status && (
+													<Row>
+														<p
+															className={
+																status === true
+																	? "danger"
+																	: "success"
+															}
+														>
+															* Complete all
+															fields
+														</p>
+													</Row>
+												)}
+												{!status && (
+													<Row>
+														<p
+															className={
+																status === true
+																	? "danger"
+																	: "success"
+															}
+														>
+															* Completed fields
+														</p>
+													</Row>
+												)}
 												<button
 													className="button-contact"
 													type="submit"
@@ -229,20 +256,6 @@ export const Contact = () => {
 													<span>{buttonText}</span>
 												</button>
 											</Col>
-											{status.message && (
-												<Col>
-													<p
-														className={
-															status.success ===
-															false
-																? "danger"
-																: "success"
-														}
-													>
-														{status.message}
-													</p>
-												</Col>
-											)}
 										</Row>
 										<input
 											type="hidden"

@@ -92,12 +92,14 @@ export const Banner = () => {
 										directly through the contact form that
 										is on this page.
 									</p>
-									<button
+
+									<a
+										href="#connect"
 										onClick={() => console.log("connect")}
 									>
 										Let’s Connect{" "}
 										<ArrowRightCircle size={25} />
-									</button>
+									</a>
 								</div>
 							)}
 						</TrackVisibility>
