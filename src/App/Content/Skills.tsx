@@ -1,5 +1,5 @@
-import javascript from "../assets/img/javascript.svg";
-import typescript from "../assets/img/typescript.svg";
+import javascript from "../assets/img/javaScript.svg";
+import typescript from "../assets/img/typeScript.svg";
 import react from "../assets/img/react.svg";
 import redux from "../assets/img/redux.svg";
 import next from "../assets/img/next.svg";
