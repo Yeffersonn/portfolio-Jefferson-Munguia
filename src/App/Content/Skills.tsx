@@ -14,10 +14,9 @@ import arrow1 from "../assets/img/arrow1.svg";
 import arrow2 from "../assets/img/arrow2.svg";
 import colorSharp from "../assets/img/color-sharp.png";
 
-
 export interface skill {
-	img: string,
-	name: string,
+	img: string;
+	name: string;
 }
 
 export const Skills = () => {
@@ -41,7 +40,7 @@ export const Skills = () => {
 		},
 	};
 
-	const skills:skill[] = [
+	const skills: skill[] = [
 		{ img: javascript, name: "JavaScript" },
 		{ img: typescript, name: "TypeScript" },
 		{ img: react, name: "React" },
@@ -62,15 +61,15 @@ export const Skills = () => {
 						<div className="skill-bx wow zoomIn">
 							<h2>Skills</h2>
 							<p>
-								In this section you will find all the programming
-								languages <br /> ​​that I use as a frontend developer.
+								In this section you will find the programming languages
+								<br></br>I use in my activities as a web developer.
 							</p>
 							<Carousel
 								responsive={responsive}
 								infinite={true}
 								className="owl-carousel owl-theme skill-slider"
 							>
-								{skills.map(({img,name}) => {
+								{skills.map(({ img, name }) => {
 									return (
 										<div className="item" key={name}>
 											<img src={img} alt={name} />
