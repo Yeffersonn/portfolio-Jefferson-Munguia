@@ -1,13 +1,13 @@
-import JavaScript from "../assets/img/javascript.svg";
-import TypeScript from "../assets/img/typescript.svg";
-import React from "../assets/img/react.svg";
-import Redux from "../assets/img/redux.svg";
-import Next from "../assets/img/next.svg";
-import HTML from "../assets/img/html.svg";
-import CSS from "../assets/img/css.svg";
-import Bootstrap from "../assets/img/bootstrap.svg";
-import Tailwind from "../assets/img/tailwind.svg";
-import Sass from "../assets/img/sass.svg";
+import javascript from "../assets/img/javascript.svg";
+import typescript from "../assets/img/typescript.svg";
+import react from "../assets/img/react.svg";
+import redux from "../assets/img/redux.svg";
+import next from "../assets/img/next.svg";
+import html from "../assets/img/html.svg";
+import css from "../assets/img/css.svg";
+import bootstrap from "../assets/img/bootstrap.svg";
+import tailwind from "../assets/img/tailwind.svg";
+import sass from "../assets/img/sass.svg";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import arrow1 from "../assets/img/arrow1.svg";
@@ -42,16 +42,16 @@ export const Skills = () => {
 	};
 
 	const skills:skill[] = [
-		{ img: JavaScript, name: "JavaScript" },
-		{ img: TypeScript, name: "TypeScript" },
-		{ img: React, name: "React" },
-		{ img: Redux, name: "Redux" },
-		{ img: Next, name: "NextJS" },
-		{ img: HTML, name: "HTML" },
-		{ img: CSS, name: "CSS" },
-		{ img: Bootstrap, name: "Bootstrap" },
-		{ img: Tailwind, name: "Tailwind CSS" },
-		{ img: Sass, name: "Sass" },
+		{ img: javascript, name: "JavaScript" },
+		{ img: typescript, name: "TypeScript" },
+		{ img: react, name: "React" },
+		{ img: redux, name: "Redux" },
+		{ img: next, name: "NextJS" },
+		{ img: html, name: "HTML" },
+		{ img: css, name: "CSS" },
+		{ img: bootstrap, name: "Bootstrap" },
+		{ img: tailwind, name: "Tailwind CSS" },
+		{ img: sass, name: "Sass" },
 	];
 
 	return (
