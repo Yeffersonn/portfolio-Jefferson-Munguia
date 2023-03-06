@@ -4,6 +4,7 @@ import headerImg from "../assets/img/header-img.svg";
 import { ArrowRightCircle } from "react-bootstrap-icons";
 import "animate.css";
 import TrackVisibility from "react-on-screen";
+import { motion } from "framer-motion";
 
 export const Banner = () => {
 	const [loopNum, setLoopNum] = useState(0);
@@ -60,49 +61,40 @@ export const Banner = () => {
 			<Container>
 				<Row className="aligh-items-center">
 					<Col xs={12} md={6} xl={7}>
-						<TrackVisibility>
-							{({ isVisible }) => (
-								<div
-									className={
-										isVisible
-											? "animate__animated animate__fadeIn"
-											: ""
-									}
+						<motion.div
+							initial="hidden"
+							whileInView="visible"
+							viewport={{ once: true, amount: 0.5 }}
+							transition={{ delay:0.3, duration: 0.75 }}
+							variants={{
+								hidden: { opacity: 0, y: 100 },
+								visible: { opacity: 1, y: 0 },
+							}}
+						>
+							<span className="tagline">Welcome to my Portfolio</span>
+							<h1>
+								{`Hi! I'm Jefferson`}{" "}
+								<span
+									className="txt-rotate"
+									// dataPeriod="1000"
+									data-rotate='[ "Frontend Developer", "Backend Developer", "UI/UX Designer" ]'
 								>
-									<span className="tagline">
-										Welcome to my Portfolio
-									</span>
-									<h1>
-										{`Hi! I'm Jefferson`}{" "}
-										<span
-											className="txt-rotate"
-											// dataPeriod="1000"
-											data-rotate='[ "Frontend Developer", "Backend Developer", "UI/UX Designer" ]'
-										>
-											<span className="wrap">{text}</span>
-										</span>
-									</h1>
-									<p>
-										Welcome, on this page you will find my
-										skills as a web developer, you will also
-										find the projects that I have developed
-										with these skills. If you want to
-										contact me you can do it through the
-										Linkedin and GitHub links or also
-										directly through the contact form that
-										is on this page.
-									</p>
+									<span className="wrap">{text}</span>
+								</span>
+							</h1>
+							<p>
+								Welcome, on this page you will find my skills as a web
+								developer, you will also find the projects that I have
+								developed with these skills. If you want to contact me
+								you can do it through the Linkedin and GitHub links or
+								also directly through the contact form that is on this
+								page.
+							</p>
 
-									<a
-										href="#connect"
-										onClick={() => console.log("connect")}
-									>
-										Let’s Connect{" "}
-										<ArrowRightCircle size={25} />
-									</a>
-								</div>
-							)}
-						</TrackVisibility>
+							<a href="#connect" onClick={() => console.log("connect")}>
+								Let’s Connect <ArrowRightCircle size={25} />
+							</a>
+						</motion.div>
 					</Col>
 					<Col xs={12} md={6} xl={5}>
 						<TrackVisibility>

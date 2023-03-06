@@ -28,10 +28,11 @@ export const NavBar = () => {
 		setActiveLink(value);
 	};
 
+	// className="animate__animated animate__lightSpeedInLeft" animación del navBar
 	return (
 		<Router>
 			<Navbar expand="md" className={scrolled ? "scrolled" : ""}>
-				<Container className="animate__animated animate__lightSpeedInLeft">
+				<Container>
 					<Navbar.Brand href="/">
 						<img src={logo} alt="Logo" />
 					</Navbar.Brand>
@@ -77,7 +78,7 @@ export const NavBar = () => {
 						<span className="navbar-text">
 							<div className="social-icon">
 								<a
-									href="https://www.linkedin.com/in/jefferson-junior-munguia-egusquiza-745781264/"
+									href="https://www.linkedin.com/in/jefferson-munguia-745781264/"
 									rel="noopener"
 									target="_blank"
 								>

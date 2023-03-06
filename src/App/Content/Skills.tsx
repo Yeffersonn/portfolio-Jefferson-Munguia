@@ -13,6 +13,7 @@ import "react-multi-carousel/lib/styles.css";
 import arrow1 from "../assets/img/arrow1.svg";
 import arrow2 from "../assets/img/arrow2.svg";
 import colorSharp from "../assets/img/color-sharp.png";
+import { motion } from "framer-motion";
 
 export interface skill {
 	img: string;
@@ -58,7 +59,17 @@ export const Skills = () => {
 			<div className="container">
 				<div className="row">
 					<div className="col-12">
-						<div className="skill-bx wow zoomIn">
+						<motion.div
+							className="skill-bx wow zoomIn"
+							initial="hidden"
+							whileInView="visible"
+							viewport={{ once: true, amount: 0.5 }}
+							transition={{ delay: 0.5, duration: 0.75 }}
+							variants={{
+								hidden: { opacity: 0, y: -100 },
+								visible: { opacity: 1, y: 0 },
+							}}
+						>
 							<h2>Skills</h2>
 							<p>
 								In this section you will find the programming languages
@@ -78,7 +89,7 @@ export const Skills = () => {
 									);
 								})}
 							</Carousel>
-						</div>
+						</motion.div>
 					</div>
 				</div>
 			</div>

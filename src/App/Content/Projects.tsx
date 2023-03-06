@@ -10,6 +10,7 @@ import navIcon4 from "../assets/img/nav-icon4.svg";
 import colorSharp2 from "../assets/img/color-sharp2.png";
 import "animate.css";
 import TrackVisibility from "react-on-screen";
+import { motion } from "framer-motion";
 
 export const Projects = () => {
 	const projects: cardProyect[] = [
@@ -62,89 +63,78 @@ export const Projects = () => {
 			<Container>
 				<Row>
 					<Col size={12}>
-						<TrackVisibility>
-							{({ isVisible }) => (
-								<div
-									className={
-										isVisible
-											? "animate__animated animate__fadeIn"
-											: ""
-									}
-								>
-									<h2>Projects</h2>
-									<p>
-										Here you can find all my projects in
-										which I have put my skills as a Frontend
-										Developer into practice.
-									</p>
-									<Tab.Container
-										id="projects-tabs"
-										defaultActiveKey="first"
+						<motion.div
+							initial="hidden"
+							whileInView="visible"
+							viewport={{ once: true, amount: 0.5 }}
+							transition={{ delay: 0.2, duration: 0.75 }}
+							variants={{
+								hidden: { opacity: 0, y: -100 },
+								visible: { opacity: 1, y: 0 },
+							}}
+						>
+							<h2>Projects</h2>
+							<p>
+								Here you can find all my projects in which I have put my
+								skills as a Frontend Developer into practice.
+							</p>
+						</motion.div>
+						<Tab.Container id="projects-tabs" defaultActiveKey="first">
+							<Nav
+								variant="pills"
+								className="nav-pills mb-5 justify-content-center align-items-center"
+								id="pills-tab"
+							>
+								<Nav.Item>
+									<Nav.Link eventKey="first">Tab 1</Nav.Link>
+								</Nav.Item>
+								<Nav.Item>
+									<Nav.Link eventKey="second">Tab 2</Nav.Link>
+								</Nav.Item>
+								<Nav.Item>
+									<Nav.Link eventKey="third">Tab 3</Nav.Link>
+								</Nav.Item>
+							</Nav>
+							<Tab.Content
+								id="slideInUp"
+							>
+								<Tab.Pane eventKey="first">
+									<motion.div
+										initial="hidden"
+										whileInView="visible"
+										viewport={{ once: true, amount: 0.5 }}
+										variants={{
+											hidden: {},
+											visible: {
+												transition: {
+													staggerChildren: 0.3,
+												},
+											},
+										}}
 									>
-										<Nav
-											variant="pills"
-											className="nav-pills mb-5 justify-content-center align-items-center"
-											id="pills-tab"
-										>
-											<Nav.Item>
-												<Nav.Link eventKey="first">
-													Tab 1
-												</Nav.Link>
-											</Nav.Item>
-											<Nav.Item>
-												<Nav.Link eventKey="second">
-													Tab 2
-												</Nav.Link>
-											</Nav.Item>
-											<Nav.Item>
-												<Nav.Link eventKey="third">
-													Tab 3
-												</Nav.Link>
-											</Nav.Item>
-										</Nav>
-										<Tab.Content
-											id="slideInUp"
-											className={
-												isVisible
-													? "animate__animated animate__slideInUp"
-													: ""
-											}
-										>
-											<Tab.Pane eventKey="first">
-												<Row>
-													{projects.map(
-														(project, index) => {
-															return (
-																<ProjectCard
-																	key={index}
-																	{...project}
-																/>
-															);
-														}
-													)}
-												</Row>
-											</Tab.Pane>
-											<Tab.Pane eventKey="second">
-												<p>
-													Soon I will post more of my
-													projects, but you can find
-													more of my projects in my
-													github profile
-												</p>
-											</Tab.Pane>
-											<Tab.Pane eventKey="third">
-												<p>
-													Soon I will post more of my
-													projects, but you can find
-													more of my projects in my
-													github profile
-												</p>
-											</Tab.Pane>
-										</Tab.Content>
-									</Tab.Container>
-								</div>
-							)}
-						</TrackVisibility>
+										<Row>
+											{projects.map((project, index) => {
+												return (
+													<ProjectCard key={index} {...project} />
+												);
+											})}
+										</Row>
+									</motion.div>
+								</Tab.Pane>
+								<Tab.Pane eventKey="second">
+									<p>
+										Soon I will post more of my projects, but you can
+										find more of my projects in my github profile
+									</p>
+								</Tab.Pane>
+								<Tab.Pane eventKey="third">
+									<p>
+										Soon I will post more of my projects, but you can
+										find more of my projects in my github profile
+									</p>
+								</Tab.Pane>
+							</Tab.Content>
+						</Tab.Container>
 					</Col>
 				</Row>
 			</Container>

@@ -1,21 +1,41 @@
+import { motion } from "framer-motion";
 import { Container, Row, Col } from "react-bootstrap";
 import logo from "../assets/img/logoFooter.png";
 import navIcon1 from "../assets/img/nav-icon1.svg";
 import navIcon4 from "../assets/img/nav-icon4.svg";
 
-
 export const Footer = () => {
 	return (
-		<footer className="footer">
+		<footer
+			className="footer"
+		>
 			<Container>
 				<Row className="align-items-center">
 					<Col size={12} sm={6}>
-						<img src={logo} alt="Logo" />
+						<motion.img
+						initial="hidden"
+						whileInView="visible"
+						viewport={{ once: true, amount: 0.5 }}
+						transition={{ delay: 0.3, duration: 0.75 }}
+						variants={{
+							hidden: { opacity: 0, x: 100 },
+							visible: { opacity: 1, x: 0 },
+						}}
+						src={logo} alt="Logo" />
 					</Col>
 					<Col size={12} sm={6} className="text-center text-sm-end">
-						<div className="social-icon">
+						<motion.div
+						initial="hidden"
+						whileInView="visible"
+						viewport={{ once: true, amount: 0.5 }}
+						transition={{ delay: 0.3, duration: 0.75 }}
+						variants={{
+							hidden: { opacity: 0, x: -100 },
+							visible: { opacity: 1, x: 0 },
+						}}
+						className="social-icon">
 							<a
-								href="https://www.linkedin.com/in/jefferson-junior-munguia-egusquiza-745781264/"
+								href="https://www.linkedin.com/in/jefferson-munguia-745781264/"
 								rel="noopener"
 								target="_blank"
 							>
@@ -32,8 +52,17 @@ export const Footer = () => {
 									className="img-custom"
 								/>
 							</a>
-						</div>
-						<p>Copyright 2023. All Rights Reserved</p>
+						</motion.div>
+						<motion.p
+						initial="hidden"
+						whileInView="visible"
+						viewport={{ once: true, amount: 0.5 }}
+						transition={{ delay: 0.3, duration: 0.75 }}
+						variants={{
+							hidden: { opacity: 0, x:-100 },
+							visible: { opacity: 1, x: 0 },
+						}}
+						>Copyright 2023. All Rights Reserved</motion.p>
 					</Col>
 				</Row>
 			</Container>
