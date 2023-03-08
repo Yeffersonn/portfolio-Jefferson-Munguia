@@ -6,6 +6,10 @@ import projImg3 from "../assets/img/project-img3.png";
 import projImg4 from "../assets/img/project-img4.png";
 import projImg5 from "../assets/img/project-img5.png";
 import projImg6 from "../assets/img/project-img6.png";
+import projImg7 from "../assets/img/project-img7.png";
+import projImg8 from "../assets/img/project-img8.png";
+import projImg9 from "../assets/img/project-img9.png";
+import projImg10 from "../assets/img/project-img10.png";
 import navIcon4 from "../assets/img/nav-icon4.svg";
 import colorSharp2 from "../assets/img/color-sharp2.png";
 import "animate.css";
@@ -55,6 +59,37 @@ export const Projects = () => {
 				"Application developed with JavaScript, React, React Router",
 			imgUrl: projImg6,
 			webUrl: "https://recordatorios.vercel.app/",
+		},
+	];
+
+	const projects2: cardProyect[] = [
+		{
+			title: "Evogym",
+			description:
+				"Responsive design developed with TypeScript, React, Tailwind",
+			imgUrl: projImg7,
+			webUrl: "https://evogym-omega.vercel.app/",
+		},
+		{
+			title: "Coffee Website",
+			description:
+				"Responsive design developed with JavaScript, React and Scroll Reveal",
+			imgUrl: projImg8,
+			webUrl: "https://coffee-website-sable.vercel.app/",
+		},
+		{
+			title: "Sushi Website",
+			description:
+				"Responsive design and Dark mode developed with JavaScript, React",
+			imgUrl: projImg9,
+			webUrl: "https://sushi-website-sigma.vercel.app/",
+		},
+		{
+			title: "Christmas Website",
+			description:
+				"Responsive design and Parallax Effect developed with JavaScript, React",
+			imgUrl: projImg10,
+			webUrl: "https://christmas-website-seven.vercel.app/#celebrate",
 		},
 	];
 
@@ -122,10 +157,27 @@ export const Projects = () => {
 									</motion.div>
 								</Tab.Pane>
 								<Tab.Pane eventKey="second">
-									<p>
-										Soon I will post more of my projects, but you can
-										find more of my projects in my github profile
-									</p>
+								<motion.div
+										initial="hidden"
+										whileInView="visible"
+										viewport={{ once: true, amount: 0.5 }}
+										variants={{
+											hidden: {},
+											visible: {
+												transition: {
+													staggerChildren: 0.3,
+												},
+											},
+										}}
+									>
+										<Row>
+											{projects2.map((project, index) => {
+												return (
+													<ProjectCard key={index} {...project} />
+												);
+											})}
+										</Row>
+									</motion.div>
 								</Tab.Pane>
 								<Tab.Pane eventKey="third">
 									<p>

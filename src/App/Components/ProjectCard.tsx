@@ -15,7 +15,7 @@ export const ProjectCard = ({
 	webUrl,
 }: cardProyect) => {
 	return (
-		<Col size={12} sm={6} md={4}>
+		<Col size={12} sm={12} md={6} lg={4}>
 			<motion.div
 				className="proj-imgbx"
 				viewport={{ once: true, amount: 0.5 }}
@@ -27,7 +27,7 @@ export const ProjectCard = ({
 				<img src={imgUrl} />
 				<div className="proj-txtx">
 					<h4>{title}</h4>
-					<span>{description}</span>
+					<span className="proj-description">{description}</span>
 					<br />
 					<a
 						href={webUrl}
