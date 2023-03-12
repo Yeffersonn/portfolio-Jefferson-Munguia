@@ -10,6 +10,7 @@ import projImg7 from "../assets/img/project-img7.png";
 import projImg8 from "../assets/img/project-img8.png";
 import projImg9 from "../assets/img/project-img9.png";
 import projImg10 from "../assets/img/project-img10.png";
+import projImg11 from "../assets/img/project-img11.png";
 import navIcon4 from "../assets/img/nav-icon4.svg";
 import colorSharp2 from "../assets/img/color-sharp2.png";
 import "animate.css";
@@ -90,6 +91,13 @@ export const Projects = () => {
 				"Responsive design and Parallax Effect developed with JavaScript, React",
 			imgUrl: projImg10,
 			webUrl: "https://christmas-website-seven.vercel.app/#celebrate",
+		},
+		{
+			title: "Juice Website",
+			description:
+				"Responsive design developed with JavaScript, React, and GSAP",
+			imgUrl: projImg11,
+			webUrl: "https://juice-website-ochre.vercel.app/",
 		},
 	];
 
