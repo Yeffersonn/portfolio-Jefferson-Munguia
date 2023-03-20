@@ -11,6 +11,7 @@ import projImg8 from "../assets/img/project-img8.png";
 import projImg9 from "../assets/img/project-img9.png";
 import projImg10 from "../assets/img/project-img10.png";
 import projImg11 from "../assets/img/project-img11.png";
+import projImg12 from "../assets/img/project-img12.png";
 import navIcon4 from "../assets/img/nav-icon4.svg";
 import colorSharp2 from "../assets/img/color-sharp2.png";
 import "animate.css";
@@ -98,6 +99,13 @@ export const Projects = () => {
 				"Responsive design developed with JavaScript, React, and GSAP",
 			imgUrl: projImg11,
 			webUrl: "https://juice-website-ochre.vercel.app/",
+		},
+		{
+			title: "Yoga Website",
+			description:
+				"Responsive design and Dark Mode developed with JavaScript, React",
+			imgUrl: projImg12,
+			webUrl: "https://yoga-website-blond.vercel.app/",
 		},
 	];
 
